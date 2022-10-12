@@ -1,0 +1,47 @@
+# Project Oriented Workflow
+
+## Learning Objectives
+
+In this chapter, readers will:
+
+-   identify the benefits of using RStudio projects
+
+## Introduction
+
+RStudio projects make it easy to organize your data analysis in self-contained projects. Refer to this page, [*Using RStudio Projects*](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) to learn more about RStudio projects. When I initiate a new data analysis project I ground myself within the [R for Data Science](https://r4ds.had.co.nz/index.html) model:
+
+[![data exploration workflow program](assets/data-science-explore.png)](https://r4ds.had.co.nz/explore-intro.html)
+
+To return to the project and make updates or run reports I open the project in RStudio. This is much easier than fiddling with a working directory.
+
+## Project Folder Structure
+
+There is no right or wrong way to organize your data analysis. If you do an internet search you will find many different strategies. This is the approach I usually follow. I give my project a name and I make four directories (folders):
+
+    project-name
+        - data-tidy
+        - data-raw
+        - reports
+        - scripts
+
+### data-tidy
+
+In this folder, I keep data that has already been processed. The files in this sub-folder are ready for analysis.
+
+### data-raw
+
+I do not make any changes to raw data. The data stays in the state I received it. After I import data into my data analysis project and tidy it, I save a copy in the `data-tidy` folder.
+
+### reports
+
+This folder contains RMarkdown (or Quarto) reports. Learn about RMarkdown by reviewing the documentation: <https://rmarkdown.rstudio.com/>
+
+### scripts
+
+I save my R scripts in this folder. Each script is intended to handle a single task. My `import` script is only intended to read the data. My `tidy` script is only intended to wrangle the data and make it manageable. I usually name the scripts something like:
+
+    - 00-setup.R
+    - 01-import.R
+    - 02-tidy-and-transform.R
+    - 03-analysis.R
+    - 04-data-viz.R

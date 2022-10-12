@@ -1,0 +1,16 @@
+# Introduction
+
+## Learning Objectives
+
+In this chapter, readers will:
+
+- objective 1 
+
+
+When using R, there is no one way to achieve your goals. There are many paths which will lead you to your goal. Most importantly, one must know what they want to achieve and why.
+
+
+For example, if the desired deliverable is to produce a bar chart showing the number of COVID-19 cases each week, then using the [tidyverse](https://www.tidyverse.org/) selection of packages may be the most efficient way to generate a plot.
+
+
+In this document I am presenting one possible path and I hope that you eventually find what works best for you and your projects.

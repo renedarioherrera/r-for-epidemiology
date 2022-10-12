@@ -1,0 +1,150 @@
+# R
+
+## Learning Objectives
+
+In this chapter, readers will:
+
+-   identify the types of vectors and objects used in R
+-   be able to assign a value to a named object
+-   list the commands used to install and load packages
+
+## Introduction
+
+In this section, we will review R. R is a powerful data science statistical programming language. The [R user manual](https://cloud.r-project.org/doc/manuals/r-release/R-intro.html) is a useful reference.
+
+## R is a Calculator
+
+R can be used as an advanced scientific calculator. For example, say I wanted to sum two values:
+
+```{r}
+2+2
+```
+
+Or if I wanted to take the average of a set of values:
+
+```{r}
+mean(c(2,4,6,8))
+```
+
+Notice that I enclosed the values in `c()`. I used `c()` to create a vector of my numeric values, and then I took a mean of those values. I could instead assign (`<-`) the vector to a named object:
+
+```{r}
+my_vector <- c(2,4,6,8)
+my_vector
+mean(my_vector)
+```
+
+Now each time I use `my_vector`, R will know I mean `2,4,6,8`.
+
+### Vectors
+
+There are different types of vectors.
+
+-   numeric: numbers, like the example above
+-   character: Character strings are entered using either matching double (") or single (') quotes, but are printed using double quotes (or sometimes without quotes).
+-   logical: The elements of a logical vector can have the values TRUE, FALSE, and NA (for "not available").
+
+#### Other Types of Objects
+
+And other objects exist:
+
+-   *matrices* or more generally arrays are multi-dimensional generalizations of vectors. In fact, they are vectors that can be indexed by two or more indices and will be printed in special ways. See [Arrays and matrices](https://cloud.r-project.org/doc/manuals/r-release/R-intro.html#Arrays-and-matrices).
+-   *factors* provide compact ways to handle categorical data. See [Ordered and unordered factors](https://cloud.r-project.org/doc/manuals/r-release/R-intro.html#Factors).
+-   *lists* are a general form of vector in which the various elements need not be of the same type, and are often themselves vectors or lists. Lists provide a convenient way to return the results of a statistical computation. See [Lists](https://cloud.r-project.org/doc/manuals/r-release/R-intro.html#Lists).
+-   *data frames* are matrix-like structures, in which the columns can be of different types. Think of data frames as 'data matrices' with one row per observational unit but with (possibly) both numerical and categorical variables. Many experiments are best described by data frames: the treatments are categorical but the response is numeric. See [Data frames](https://cloud.r-project.org/doc/manuals/r-release/R-intro.html#Data-frames).
+-   *functions* are themselves objects in R which can be stored in the project's workspace. This provides a simple and convenient way to extend R. See [Writing your own functions](https://cloud.r-project.org/doc/manuals/r-release/R-intro.html#Writing-your-own-functions).
+
+### Use R for Formulas
+
+For example, say we had a data set of observations of heights and weights, and for some reason we wanted to calculate the BMI for each observation. To get the mean for each observation I could do the following:
+
+```{r}
+library(tidyverse) # load the tidyverse package to use the pipe %>%
+library(datasets) # load the women dataset
+
+women %>% # call the data set
+  mutate( # create new variables for the data set I just called
+    bmi = (weight / (height)^2)*703 # new variable BMI using the formula for calculating BMI from weight in pounds and height in inches
+  ) %>%
+  head() # limit my output to the first six observations
+```
+
+And if I wanted to get the mean or median of my sample's BMI, then I could do this:
+
+```{r}
+women %>% # call the dataset
+  mutate( # create new variables
+    bmi = (weight / (height)^2)*703 # new variable BMI using the formula for calculating BMI from weight in pounds and height in inches
+  ) %>%
+  summarise( # creates a new data frame
+    # It will contain one column for each grouping variable and one column for each of the summary statistics that you have specified
+    bmi_mean = mean(bmi), # new variable
+    bmi_median = median(bmi) # new variable
+  )
+```
+
+## Packages
+
+Packages are bundles of code that add new functionality. This is a list of the packages I recommend:
+
+-   [here](https://here.r-lib.org/): project oriented workflow
+-   [tidyverse](https://www.tidyverse.org/): an opinionated collection of R packages designed for data science
+-   [janitor](https://sfirke.github.io/janitor/): simple functions for examining and cleaning dirty data
+-   [haven](https://haven.tidyverse.org/): enables R to read and write various data formats used by other statistical packages (i.e. SAS)
+-   [readxl](https://readxl.tidyverse.org/): makes it easy to get data out of Excel and into R
+-   [lubridate](https://lubridate.tidyverse.org/): makes it easier to do the things R does with date-times and possible to do the things R does not
+-   [rmarkdown](https://rmarkdown.rstudio.com/lesson-1.html): Turn your analyses into high quality documents, reports, presentations and dashboards
+-   [knitr](https://yihui.org/knitr/): designed to be a transparent engine for dynamic report generation with R
+-   [gt](https://gt.rstudio.com/): make wonderful-looking tables using the R programming language
+-   [pacman](https://github.com/trinker/pacman): your new package manager
+-   [qualtRics](https://docs.ropensci.org/qualtRics/): implements the retrieval of survey data using the Qualtrics API and aims to reduce the pre-processing steps needed in analyzing such surveys
+-   [tidycensus](https://walker-data.com/tidycensus/): allows users to interface with a select number of the US Census Bureau's data APIs and return tidyverse-ready data frames, optionally with simple feature geometry included
+-   [flexdashboard](https://pkgs.rstudio.com/flexdashboard/): make it easy to create interactive dashboards for R, using R Markdown
+-   [pins](https://pins.rstudio.com/): publishes data, models, and other R objects, making it easy to share them across projects and with your colleagues
+-   [Rnssp](https://cdcgov.github.io/Rnssp/): catalog of data processing and analytics tools, templates, and functions commonly used across the National Syndromic Surveillance Program at the Centers for Disease Control and Prevention (CDC)
+
+### Installing Packages
+
+Install packages individually with `install.packages("package-name")` or use `pacman::p_load(package-name)`.
+
+This is [R code](https://gist.github.com/stevenworthington/3178163) that you can use to install the packages I listed above:
+
+    ipak <- function(pkg){
+        new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+        if (length(new.pkg)) 
+            install.packages(new.pkg, dependencies = TRUE)
+        sapply(pkg, require, character.only = TRUE)
+    }
+
+    # usage
+    packages <- c(
+      "here",
+      "tidyverse",
+      "janitor",
+      "haven",
+      "readxl",
+      "lubridate",
+      "rmarkdown",
+      "knitr",
+      "gt",
+      "pacman",
+      "qualtRics",
+      "tidycensus",
+      "flexdashboard",
+      "pins",
+      "Rnssp"
+    )
+
+    ipak(packages)
+
+### Loading Packages
+
+Load packages for use with `library(package-name)` or `pacman::p_load(package-name)`.
+
+## R Programming Tutorial - Learn the Basics of Statistical Computing
+
+This is the Free Code Camp R Programming Tutorial (2019: <https://www.youtube.com/watch?v=_V8eKsto3Ug>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_V8eKsto3Ug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>

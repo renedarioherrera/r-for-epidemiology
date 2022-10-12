@@ -1,0 +1,33 @@
+"0","library(tidyverse) # load tidyverse package"
+"0","library(readxl) # load readxl package"
+"0","library(janitor) # load janitor package"
+"0",""
+"0","my_excel_data <- read_excel( # assign the excel file to a new object"
+"0","  ""data-raw/us-covid-19-community-level-by-county.xlsx"" # name of excel file"
+"0",") %>%"
+"0","  clean_names() # clean up the variable names"
+"0",""
+"0","glimpse(my_excel_data) # get a glimpse of the data"
+"1","Rows: 1,000"
+"1",""
+"1","
+"
+"1","Columns: 12"
+"1",""
+"1","
+"
+"1","$ county                             [3m[38;5;246m<chr>[39m[23m ""Wibaux County"", ""Blue Earth County"", ""Culbe…
+$ county_fips                        [3m[38;5;246m<chr>[39m[23m ""30109"", ""27013"", ""48109"", ""37005"", ""13301"",…
+$ state                              [3m[38;5;246m<chr>[39m[23m ""Montana"", ""Minnesota"", ""Texas"", ""North Caro…
+$ county_population                  [3m[38;5;246m<chr>[39m[23m ""969"", ""67653"", ""2171"", ""11137"", ""5254"", ""64…
+$ health_service_area_number         [3m[38;5;246m<chr>[39m[23m ""767"", ""573"", ""415"", ""73"", ""152"", ""772"", ""62…
+$ health_service_area                [3m[38;5;246m<chr>[39m[23m ""Richland, MT - Dawson, MT"", ""Blue Earth, MN…
+$ health_service_area_population     [3m[38;5;246m<chr>[39m[23m ""22049"", ""131436"", ""846464"", ""62825"", ""64828…
+$ covid_inpatient_bed_utilization    [3m[38;5;246m<chr>[39m[23m ""1.8"", ""2.8"", ""2.2"", ""3.5"", ""1.5"", ""1.8"", ""0…
+$ covid_hospital_admissions_per_100k [3m[38;5;246m<chr>[39m[23m ""9.1"", ""10.7"", ""5.6"", ""12.7"", ""0.5"", ""5.7"", …
+$ covid_cases_per_100k               [3m[38;5;246m<chr>[39m[23m ""0"", ""181.81"", ""46.06"", ""26.94"", ""19.03"", ""2…
+$ covid_19_community_level           [3m[38;5;246m<chr>[39m[23m ""Low"", ""Medium"", ""Low"", ""Medium"", ""Low"", ""Me…
+$ date_updated                       [3m[38;5;246m<dttm>[39m[23m 2022-06-23 07:00:00, 2022-06-09 07:00:00, 2…"
+"1",""
+"1","
+"

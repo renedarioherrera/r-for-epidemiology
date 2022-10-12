@@ -1,0 +1,72 @@
+# Prerequisites
+
+## Learning Objectives
+
+In this chapter, readers will:
+
+-   identify how to install R and RStudio
+
+## Introduction
+
+Before we get started, please make sure that you have met the following required prerequisites.
+
+## Required
+
+To use R for epidemiology data analysis you must have R installed on your computer or have access to an R server. And I recommend you use RStudio to work with R.
+
+### R
+
+Install R from the website: <https://cloud.r-project.org/>
+
+In this guide, I am using R version:
+
+```{r}
+R.version.string
+```
+
+### RStudio
+
+RStudio is an interactive development environment (IDE) and is the recommended way to use R. Install RStudio Desktop from the website: <https://www.rstudio.com/products/rstudio/download/#download>
+
+In this guide, I am using RStudio version:
+
+    RStudio 2022.07.1+554 "Spotted Wakerobin" Release (7872775ebddc40635780ca1ed238934c3345c5de, 2022-07-22) for Ubuntu Bionic  
+    Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.12.8 Chrome/69.0.3497.128 Safari/537.36  
+
+### Update R Packages
+
+Use the command below in your **Console** to update currently installed R packages:
+
+    update.packages(ask = FALSE, checkBuilt = TRUE)
+
+The console is a pane on your RStudio window. The default pane layout may differ from mine, but this is my preferred layout:
+
+![Rstudio Global Options Pane Layout accessible by Tools](assets/rstudio-pane-layout.png)
+
+## Recommended
+
+I have two recommendations. Incorporate a project oriented workflow and use version control.
+
+### Project Oriented Workflow
+
+A project oriented workflow is a data analysis procedure that exists within a container. Jennifer Bryan (citation needed) makes a strong case for incorporating a project oriented workflow into your data analysis system:
+
+> I suggest organizing each data analysis into a project: a folder on your computer that holds all the files relevant to that particular piece of work. I'm not assuming this is an RStudio Project, though this is a nice implementation discussed below.
+>
+> Any resident R script is written assuming that it will be run from a fresh R process with working directory set to the project directory. It creates everything it needs, in its own workspace or folder, and it touches nothing it did not create. For example, it does not install additional packages (another pet peeve of mine).
+>
+> This convention guarantees that the project can be moved around on your computer or onto other computers and will still "just work". I argue that this is the only practical convention that creates reliable, polite behavior across different computers or users and over time. This convention is neither new, nor unique to R.
+>
+> It's like agreeing that we will all drive on the left or the right. A hallmark of civilization is following conventions that constrain your behavior a little, in the name of public safety.
+
+An easy way to do this in RStudio is to create a new project for each data analysis and use the [**here** package](https://here.r-lib.org/). In my case, I have a folder `~/projects/` where all my data analysis projects live. If I have a data analysis project to summarize This makes it easy for me to find the data, R scripts, or reports that I need.
+
+### Version Control
+
+Version control allows for tracking changes to your project and makes it easier for collaborating on projects. As described by Jennifer Bryan (citation needed) in the *Happy Git and GitHub for the useR* guide:
+
+> Git is a version control system. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files -- called a repository -- in a sane, highly structured way. If you have no idea what I'm talking about, think of it as the "Track Changes" features from Microsoft Word on steroids.
+>
+> Git has been re-purposed by the data science community. In addition to using it for source code, we use it to manage the motley collection of files that make up typical data analytical projects, which often consist of data, figures, reports, and, yes, source code.
+
+Learning version about version control is beyond the scope of this guide, but I recommend that you review the resource, [Happy Git and GitHub for the useR](https://happygitwithr.com/index.html) by Jennifer Bryan.

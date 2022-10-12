@@ -1,0 +1,33 @@
+"0","library(tidyverse) # load tidyverse package"
+"0","library(haven) # load haven package"
+"0","library(janitor) # load janitor package"
+"0",""
+"0","my_sas_data <- read_sas( # assign the sas file to a new object"
+"0","  ""data-raw/us-covid-19-community-level-by-county.sas7bdat"" # name of sas file"
+"0",") %>%"
+"0","  clean_names() # clean up the variable names"
+"0",""
+"0","glimpse(my_sas_data)"
+"1","Rows: 1,000"
+"1",""
+"1","
+"
+"1","Columns: 12"
+"1",""
+"1","
+"
+"1","$ county                          [3m[38;5;246m<chr>[39m[23m ""McCulloch County"", ""McIntosh County"", ""Berkele…
+$ county_fips                     [3m[38;5;246m<chr>[39m[23m ""48307"", ""40091"", ""54003"", ""29143"", ""05089"", ""7…
+$ state                           [3m[38;5;246m<chr>[39m[23m ""Texas"", ""Oklahoma"", ""West Virginia"", ""Missouri…
+$ county_population               [3m[38;5;246m<chr>[39m[23m ""7984"", ""19596"", ""119171"", ""17076"", ""16694"", ""3…
+$ health_service_area_number      [3m[38;5;246m<chr>[39m[23m ""426"", ""445"", ""25"", ""563"", ""407"", ""904"", ""554"",…
+$ health_service_area             [3m[38;5;246m<chr>[39m[23m ""Tom Green (San Angelo), TX - Runnels, TX"", ""Mu…
+$ health_service_area_population  [3m[38;5;246m<chr>[39m[23m ""162408"", ""239733"", ""433166"", ""310071"", ""58626""…
+$ covid_inpatient_bed_utilization [3m[38;5;246m<chr>[39m[23m ""1.1"", ""2.9"", ""2.2"", ""0.5"", ""1"", ""3.9"", ""2.1"", …
+$ covid_hospital_adm_per_100k     [3m[38;5;246m<chr>[39m[23m ""12.9"", ""5.8"", ""3.5"", ""1.6"", ""5.1"", ""8.8"", ""6.3…
+$ covid_cases_per_100k            [3m[38;5;246m<chr>[39m[23m ""137.78"", ""56.13"", ""23.5"", ""11.71"", ""29.95"", ""7…
+$ covid_19_community_level        [3m[38;5;246m<chr>[39m[23m ""Medium"", ""Low"", ""Low"", ""Low"", ""Low"", ""Medium"",…
+$ date_updated                    [3m[38;5;246m<dttm>[39m[23m 2022-06-23, 2022-06-23, 2022-04-14, 2022-04-21…"
+"1",""
+"1","
+"

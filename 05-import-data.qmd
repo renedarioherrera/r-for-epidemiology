@@ -1,0 +1,80 @@
+# Import Data
+
+## Learning Objectives
+
+In this chapter, readers will:
+
+-   identify how to import data from csv, xlsx, and sas7bdat files
+-   identify how `janitor::clean_names()` can make messy data, more neat
+
+## Introduction
+
+Common file types to import may be one of:
+
+-   csv: comma separated value, a text file
+-   xlsx: a Microsoft Excel workbook or worksheet
+-   sas7bdat: SAS files
+
+## CSV
+
+The `readr` package, loaded automatically with `library(tidyverse)`, is the package used to read and import csv files. Once loaded, the command to import a csv file is `read_csv("name-of-csv-file.csv")`. If we were interested in [United States COVID-19 Community Levels by County](https://data.cdc.gov/Public-Health-Surveillance/United-States-COVID-19-Community-Levels-by-County/3nnm-4jni/data), and we had downloaded data in a csv file, we could import it by:
+
+```{r}
+library(tidyverse) # load readr package from within tidyverse
+library(janitor) # load janitor package
+
+my_csv_data <- read_csv( # assign the csv file to a new object
+  file = "data-raw/us-covid-19-community-level-by-county.csv" # this is the file to read
+) %>%
+  clean_names() # clean up the variable names
+
+glimpse(my_csv_data) # get a glimpse of the data 
+```
+
+## Excel
+
+The `readxl` package, loaded with `library(readxl)`, is the package used to read and import xls and xlsx files. Once loaded, the command to import an Excel worksheet is `read_excel("name-of-excel-file.xlsx")`. For example:
+
+```{r}
+library(tidyverse) # load tidyverse package
+library(readxl) # load readxl package
+library(janitor) # load janitor package
+
+my_excel_data <- read_excel( # assign the excel file to a new object
+  "data-raw/us-covid-19-community-level-by-county.xlsx" # name of excel file
+) %>%
+  clean_names() # clean up the variable names
+
+glimpse(my_excel_data) # get a glimpse of the data
+```
+
+## SAS
+
+The `haven` package, loaded with `library(haven)`, is the package used to read and import SAS files. Once loaded, the command to import a SAS data set is `read_sas("name-of-sas-file.sas7bdat")`. For example:
+
+```{r}
+library(tidyverse) # load tidyverse package
+library(haven) # load haven package
+library(janitor) # load janitor package
+
+my_sas_data <- read_sas( # assign the sas file to a new object
+  "data-raw/us-covid-19-community-level-by-county.sas7bdat" # name of sas file
+) %>%
+  clean_names() # clean up the variable names
+
+glimpse(my_sas_data)
+```
+
+## About the Data
+
+I used the following code to download the data:
+
+    library(tidyverse)
+    library(RSocrata)
+    library(janitor)
+
+    covid19 <- read.socrata(url = "https://data.cdc.gov/resource/3nnm-4jni.json") %>%
+      as_tibble() %>%
+      clean_names()
+
+And I saved a sample of the data to each of the three file types we discussed earlier in this section.

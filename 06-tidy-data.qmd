@@ -1,0 +1,97 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Tidy Data
+
+This page is still being worked on.
+
+## Learning Objectives
+
+In this chapter, readers will:
+
+-   identify what makes data "tidy"
+-   identify how to make messy data tidy
+
+## Introduction
+
+After importing my data, but before any meaningful data analysis, I make sure my data is "tidy". Tidy data follows three rules as suggested by [Hadley Wickham and Garrett Grolemund](https://r4ds.had.co.nz/tidy-data.html):
+
+1.  Each variable must have its own column.
+2.  Each observation must have its own row.
+3.  Each value must have its own cell.
+
+[![rules of tidy data](assets/tidy-1.png)](https://r4ds.had.co.nz/tidy-data.html)
+
+```{r}
+library(tidyverse) # load readr package from within tidyverse
+library(tidycensus) # load the tidycensus package
+library(janitor) # load janitor package
+
+# import US Census ACS data using the tidycensus package library 
+poverty_wide <- get_acs(
+  geography = "tract",
+  variables = c(
+    "population" = "S1701_C01_001",
+    "poverty" = "S1701_C03_002",
+    "median_income" = "S1901_C01_012",
+    "median_rent" = "DP04_0134",
+    "median_age" = "B01002_001",
+    "bachelor_degree_percent" = "DP02_0065P",
+    "broadband_percent" = "DP02_0153P",
+    "hispanic_percent" = "DP05_0071P",
+    "sex_percent" = "S0101_C06_008",
+    "womens_earnings_percent" = "S2411_C04_001",
+    "gini_index" = "B19083_001",
+    "white_not_hispanic" = "B01001H_001"
+    ),
+  year = 2019,
+  geometry = FALSE,
+  survey = "acs5",
+  state = "AZ",
+  cache_table = TRUE,
+  output = "wide"
+) %>%
+  clean_names() # use janitor to clean the names 
+
+# inspect the dataset
+# note the data is wide
+glimpse(poverty_wide)
+
+# use pivot_longer to make the data tidy 
+poverty_wide %>%
+  pivot_longer(
+    cols = all_of(c("geoid", "name")),
+    names_to = "name",
+    values_to = "value"
+  )
+
+poverty_tidy <- get_acs(
+  geography = "tract",
+  variables = c(
+    "population" = "S1701_C01_001",
+    "poverty" = "S1701_C03_002",
+    "median_income" = "S1901_C01_012",
+    "median_rent" = "DP04_0134",
+    "median_age" = "B01002_001",
+    "bachelor_degree_percent" = "DP02_0065P",
+    "broadband_percent" = "DP02_0153P",
+    "hispanic_percent" = "DP05_0071P",
+    "sex_percent" = "S0101_C06_008",
+    "womens_earnings_percent" = "S2411_C04_001",
+    "gini_index" = "B19083_001",
+    "white_not_hispanic" = "B01001H_001"
+    ),
+  year = 2019,
+  geometry = FALSE,
+  survey = "acs5",
+  state = "AZ",
+  cache_table = TRUE,
+  output = "tidy"
+) %>%
+  clean_names()
+
+glimpse(poverty_tidy)
+
+```

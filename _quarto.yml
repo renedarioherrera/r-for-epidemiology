@@ -1,0 +1,31 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "An Introduction to R for Epidemiology"
+  author: "René Dario"
+  date: "today"
+  chapters:
+    - index.qmd
+    - 01-intro.qmd
+    - 02-prereq.qmd
+    - 03-projects.qmd
+    - 04-r-basics.qmd
+    - 05-import-data.qmd
+    - 06-tidy-data.qmd
+    - 07-explore-data.qmd
+    - 08-data-viz.qmd
+    - 09-dynamic-reports.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: source
+

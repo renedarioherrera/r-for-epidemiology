@@ -1,0 +1,5 @@
+# Abstract {.unnumbered}
+
+This document is intended to demonstrate how to use R for epidemiology. This will cover basics about data analysis with R using RStudio in an epidemiological context.
+
+This is updated through the section titled, "5 Import Data".

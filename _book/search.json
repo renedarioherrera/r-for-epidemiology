@@ -1,0 +1,240 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "An Introduction to R for Epidemiology",
+    "section": "",
+    "text": "This documentation is intended to demonstrate"
+  },
+  {
+    "objectID": "01-intro.html",
+    "href": "01-intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "In this chapter, readers will:"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "02-pre-req.html#recommended",
+    "href": "02-pre-req.html#recommended",
+    "title": "2  Pre-Requisites",
+    "section": "2.2 Recommended",
+    "text": "2.2 Recommended\n\n2.2.1 Project Oriented Workflow\nJennifer Bryan (citation needed) presents a strong case for incorporating a project oriented workflow:\n\nI suggest organizing each data analysis into a project: a folder on your computer that holds all the files relevant to that particular piece of work. I’m not assuming this is an RStudio Project, though this is a nice implementation discussed below.\nAny resident R script is written assuming that it will be run from a fresh R process with working directory set to the project directory. It creates everything it needs, in its own workspace or folder, and it touches nothing it did not create. For example, it does not install additional packages (another pet peeve of mine).\nThis convention guarantees that the project can be moved around on your computer or onto other computers and will still “just work”. I argue that this is the only practical convention that creates reliable, polite behavior across different computers or users and over time. This convention is neither new, nor unique to R.\nIt’s like agreeing that we will all drive on the left or the right. A hallmark of civilization is following conventions that constrain your behavior a little, in the name of public safety.\n\nThis is\n\n\n2.2.2 Version Control\nVersion control allows for tracking changes to your project and makes it easier for collaborating on projects. As described by Jennifer Bryan (citation needed) in the Happy Git and GitHub for the useR guide:\n\nGit is a version control system. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files – called a repository – in a sane, highly structured way. If you have no idea what I’m talking about, think of it as the “Track Changes” features from Microsoft Word on steroids.\nGit has been re-purposed by the data science community. In addition to using it for source code, we use it to manage the motley collection of files that make up typical data analytical projects, which often consist of data, figures, reports, and, yes, source code.\n\nI recommend that you review the resource: Happy Git and GitHub for the useR"
+  },
+  {
+    "objectID": "02-pre-req.html",
+    "href": "02-pre-req.html",
+    "title": "2  Pre-Requisites",
+    "section": "",
+    "text": "Before we get started, please make sure that you have met the following required pre-requisites."
+  },
+  {
+    "objectID": "02-pre-req.html#required",
+    "href": "02-pre-req.html#required",
+    "title": "2  Pre-Requisites",
+    "section": "2.1 Required",
+    "text": "2.1 Required\nTo use R for epidemiology data analysis you must have R installed on your computer or have access to an R server. And RStudio is the software I recommend you use to work with R.\n\n2.1.1 R\nInstall R from the website: https://cloud.r-project.org/\nIn this guide, I am using R version:\n\nR.version.string\n\n[1] \"R version 4.2.1 (2022-06-23)\"\n\n\n\n\n2.1.2 RStudio\nRStudio is an interactive development environment (IDE) and is the recommended way to use R. Install RStudio Desktop from the website: https://www.rstudio.com/products/rstudio/download/#download\nIn this guide, I am using RStudio version:\nRStudio 2022.07.1+554 \"Spotted Wakerobin\" Release (7872775ebddc40635780ca1ed238934c3345c5de, 2022-07-22) for Ubuntu Bionic  \nMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.12.8 Chrome/69.0.3497.128 Safari/537.36  \n\n\n2.1.3 Update R Packages\nUse the command below in your Console to update currently installed R packages:\nupdate.packages(ask = FALSE, checkBuilt = TRUE)\nThe console is a pane on your RStudio window. The default pane layout may differ from mine, but this is my preferred layout:\n\n\n\nRstudio Global Options Pane Layout accessible by Tools"
+  },
+  {
+    "objectID": "02-prereq.html",
+    "href": "02-prereq.html",
+    "title": "2  Prerequisites",
+    "section": "",
+    "text": "In this chapter, readers will:\n\nidentify how to install R and RStudio"
+  },
+  {
+    "objectID": "02-prereq.html#required",
+    "href": "02-prereq.html#required",
+    "title": "2  Prerequisites",
+    "section": "2.3 Required",
+    "text": "2.3 Required\nTo use R for epidemiology data analysis you must have R installed on your computer or have access to an R server. And I recommend you use RStudio to work with R.\n\n2.3.1 R\nInstall R from the website: https://cloud.r-project.org/\nIn this guide, I am using R version:\n\nR.version.string\n\n[1] \"R version 4.2.1 (2022-06-23)\"\n\n\n\n\n2.3.2 RStudio\nRStudio is an interactive development environment (IDE) and is the recommended way to use R. Install RStudio Desktop from the website: https://www.rstudio.com/products/rstudio/download/#download\nIn this guide, I am using RStudio version:\nRStudio 2022.07.1+554 \"Spotted Wakerobin\" Release (7872775ebddc40635780ca1ed238934c3345c5de, 2022-07-22) for Ubuntu Bionic  \nMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.12.8 Chrome/69.0.3497.128 Safari/537.36  \n\n\n2.3.3 Update R Packages\nUse the command below in your Console to update currently installed R packages:\nupdate.packages(ask = FALSE, checkBuilt = TRUE)\nThe console is a pane on your RStudio window. The default pane layout may differ from mine, but this is my preferred layout:\n\n\n\nRstudio Global Options Pane Layout accessible by Tools"
+  },
+  {
+    "objectID": "02-prereq.html#recommended",
+    "href": "02-prereq.html#recommended",
+    "title": "2  Prerequisites",
+    "section": "2.4 Recommended",
+    "text": "2.4 Recommended\nI have two recommendations. Incorporate a project oriented workflow and use version control.\n\n2.4.1 Project Oriented Workflow\nA project oriented workflow is a data analysis procedure that exists within a container. Jennifer Bryan (citation needed) makes a strong case for incorporating a project oriented workflow into your data analysis system:\n\nI suggest organizing each data analysis into a project: a folder on your computer that holds all the files relevant to that particular piece of work. I’m not assuming this is an RStudio Project, though this is a nice implementation discussed below.\nAny resident R script is written assuming that it will be run from a fresh R process with working directory set to the project directory. It creates everything it needs, in its own workspace or folder, and it touches nothing it did not create. For example, it does not install additional packages (another pet peeve of mine).\nThis convention guarantees that the project can be moved around on your computer or onto other computers and will still “just work”. I argue that this is the only practical convention that creates reliable, polite behavior across different computers or users and over time. This convention is neither new, nor unique to R.\nIt’s like agreeing that we will all drive on the left or the right. A hallmark of civilization is following conventions that constrain your behavior a little, in the name of public safety.\n\nAn easy way to do this in RStudio is to create a new project for each data analysis and use the here package. In my case, I have a folder ~/projects/ where all my data analysis projects live. If I have a data analysis project to summarize This makes it easy for me to find the data, R scripts, or reports that I need.\n\n\n2.4.2 Version Control\nVersion control allows for tracking changes to your project and makes it easier for collaborating on projects. As described by Jennifer Bryan (citation needed) in the Happy Git and GitHub for the useR guide:\n\nGit is a version control system. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files – called a repository – in a sane, highly structured way. If you have no idea what I’m talking about, think of it as the “Track Changes” features from Microsoft Word on steroids.\nGit has been re-purposed by the data science community. In addition to using it for source code, we use it to manage the motley collection of files that make up typical data analytical projects, which often consist of data, figures, reports, and, yes, source code.\n\nLearning version about version control is beyond the scope of this guide, but I recommend that you review the resource, Happy Git and GitHub for the useR by Jennifer Bryan."
+  },
+  {
+    "objectID": "03-projects.html",
+    "href": "03-projects.html",
+    "title": "3  Project Oriented Workflow",
+    "section": "",
+    "text": "In this chapter, readers will:\n\nidentify the benefits of using RStudio projects"
+  },
+  {
+    "objectID": "03-projects.html#project-folder-structure",
+    "href": "03-projects.html#project-folder-structure",
+    "title": "3  Project Oriented Workflow",
+    "section": "3.3 Project Folder Structure",
+    "text": "3.3 Project Folder Structure\nThere is no right or wrong way to organize your data analysis. If you do an internet search you will find many different strategies. This is the approach I usually follow. I give my project a name and I make four directories (folders):\nproject-name\n    - data-tidy\n    - data-raw\n    - reports\n    - scripts\n\n3.3.1 data-tidy\nIn this folder, I keep data that has already been processed. The files in this sub-folder are ready for analysis.\n\n\n3.3.2 data-raw\nI do not make any changes to raw data. The data stays in the state I received it. After I import data into my data analysis project and tidy it, I save a copy in the data-tidy folder.\n\n\n3.3.3 reports\nThis folder contains RMarkdown (or Quarto) reports. Learn about RMarkdown by reviewing the documentation: https://rmarkdown.rstudio.com/\n\n\n3.3.4 scripts\nI save my R scripts in this folder. Each script is intended to handle a single task. My import script is only intended to read the data. My tidy script is only intended to wrangle the data and make it manageable. I usually name the scripts something like:\n- 00-setup.R\n- 01-import.R\n- 02-tidy-and-transform.R\n- 03-analysis.R\n- 04-data-viz.R"
+  },
+  {
+    "objectID": "03-projects.html#data-tidy",
+    "href": "03-projects.html#data-tidy",
+    "title": "3  Project Oriented Workflow",
+    "section": "3.2 data-tidy",
+    "text": "3.2 data-tidy\nIn this folder, I keep data that has already been processed. The files in this sub-folder are ready for analysis."
+  },
+  {
+    "objectID": "03-projects.html#data-raw",
+    "href": "03-projects.html#data-raw",
+    "title": "3  Project Oriented Workflow",
+    "section": "3.3 data-raw",
+    "text": "3.3 data-raw\nI do not make any changes to raw data. The data stays in the state I received it. After I import data into my data analysis project and tidy it, I save a copy in the data-tidy folder."
+  },
+  {
+    "objectID": "03-projects.html#reports",
+    "href": "03-projects.html#reports",
+    "title": "3  Project Oriented Workflow",
+    "section": "3.4 reports",
+    "text": "3.4 reports\nThis folder contains RMarkdown (or Quarto) reports. Learn about RMarkdown by reviewing the documentation: https://rmarkdown.rstudio.com/"
+  },
+  {
+    "objectID": "03-projects.html#scripts",
+    "href": "03-projects.html#scripts",
+    "title": "3  Project Oriented Workflow",
+    "section": "3.5 scripts",
+    "text": "3.5 scripts\nI save my R scripts in this folder. I usually name the scripts something like:\n- 00-setup.R\n- 01-import.R\n- 02-tidy-and-transform.R\n- 03-analysis.R\n- 04-data-viz.R"
+  },
+  {
+    "objectID": "03-projects.html#resources",
+    "href": "03-projects.html#resources",
+    "title": "3  Project Oriented Workflow",
+    "section": "3.2 Resources",
+    "text": "3.2 Resources"
+  },
+  {
+    "objectID": "04-r-basics.html",
+    "href": "04-r-basics.html",
+    "title": "4  R",
+    "section": "",
+    "text": "In this chapter, readers will:\n\nidentify the types of vectors and objects used in R\nbe able to assign a value to a named object\nlist the commands used to install and load packages"
+  },
+  {
+    "objectID": "04-r-basics.html#section",
+    "href": "04-r-basics.html#section",
+    "title": "4  R",
+    "section": "4.2 ",
+    "text": "4.2"
+  },
+  {
+    "objectID": "04-r-basics.html#r-programming-tutorial---learn-the-basics-of-statistical-computing",
+    "href": "04-r-basics.html#r-programming-tutorial---learn-the-basics-of-statistical-computing",
+    "title": "4  R",
+    "section": "4.5 R Programming Tutorial - Learn the Basics of Statistical Computing",
+    "text": "4.5 R Programming Tutorial - Learn the Basics of Statistical Computing\nThis is the Free Code Camp R Programming Tutorial (2019: https://www.youtube.com/watch?v=_V8eKsto3Ug"
+  },
+  {
+    "objectID": "04-r-basics.html#packages",
+    "href": "04-r-basics.html#packages",
+    "title": "4  R",
+    "section": "4.4 Packages",
+    "text": "4.4 Packages\nPackages are bundles of code that add new functionality. This is a list of the packages I recommend:\n\nhere: project oriented workflow\ntidyverse: an opinionated collection of R packages designed for data science\njanitor: simple functions for examining and cleaning dirty data\nhaven: enables R to read and write various data formats used by other statistical packages (i.e. SAS)\nreadxl: makes it easy to get data out of Excel and into R\nlubridate: makes it easier to do the things R does with date-times and possible to do the things R does not\nrmarkdown: Turn your analyses into high quality documents, reports, presentations and dashboards\nknitr: designed to be a transparent engine for dynamic report generation with R\ngt: make wonderful-looking tables using the R programming language\npacman: your new package manager\nqualtRics: implements the retrieval of survey data using the Qualtrics API and aims to reduce the pre-processing steps needed in analyzing such surveys\ntidycensus: allows users to interface with a select number of the US Census Bureau’s data APIs and return tidyverse-ready data frames, optionally with simple feature geometry included\nflexdashboard: make it easy to create interactive dashboards for R, using R Markdown\npins: publishes data, models, and other R objects, making it easy to share them across projects and with your colleagues\nRnssp: catalog of data processing and analytics tools, templates, and functions commonly used across the National Syndromic Surveillance Program at the Centers for Disease Control and Prevention (CDC)\n\n\n4.4.1 Installing Packages\nInstall packages individually with install.packages(\"package-name\") or use pacman::p_load(package-name).\nThis is R code that you can use to install the packages I listed above:\nipak <- function(pkg){\n    new.pkg <- pkg[!(pkg %in% installed.packages()[, \"Package\"])]\n    if (length(new.pkg)) \n        install.packages(new.pkg, dependencies = TRUE)\n    sapply(pkg, require, character.only = TRUE)\n}\n\n# usage\npackages <- c(\n  \"here\",\n  \"tidyverse\",\n  \"janitor\",\n  \"haven\",\n  \"readxl\",\n  \"lubridate\",\n  \"rmarkdown\",\n  \"knitr\",\n  \"gt\",\n  \"pacman\",\n  \"qualtRics\",\n  \"tidycensus\",\n  \"flexdashboard\",\n  \"pins\",\n  \"Rnssp\"\n)\n\nipak(packages)\n\n\n4.4.2 Loading Packages\nLoad packages for use with library(package-name) or pacman::p_load(package-name)."
+  },
+  {
+    "objectID": "04-r-basics.html#r-is-a-calculator",
+    "href": "04-r-basics.html#r-is-a-calculator",
+    "title": "4  R",
+    "section": "4.3 R is a Calculator",
+    "text": "4.3 R is a Calculator\nR can be used as an advanced scientific calculator. For example, say I wanted to sum two values:\n\n2+2\n\n[1] 4\n\n\nOr if I wanted to take the average of a set of values:\n\nmean(c(2,4,6,8))\n\n[1] 5\n\n\nNotice that I enclosed the values in c(). I used c() to create a vector of my numeric values, and then I took a mean of those values. I could instead assign (<-) the vector to a named object:\n\nmy_vector <- c(2,4,6,8)\nmy_vector\n\n[1] 2 4 6 8\n\nmean(my_vector)\n\n[1] 5\n\n\nNow each time I use my_vector, R will know I mean 2,4,6,8.\n\n4.3.1 Vectors\nThere are different types of vectors.\n\nnumeric: numbers, like the example above\ncharacter: Character strings are entered using either matching double (“) or single (’) quotes, but are printed using double quotes (or sometimes without quotes).\nlogical: The elements of a logical vector can have the values TRUE, FALSE, and NA (for “not available”).\n\n\n4.3.1.1 Other Types of Objects\nAnd other objects exist:\n\nmatrices or more generally arrays are multi-dimensional generalizations of vectors. In fact, they are vectors that can be indexed by two or more indices and will be printed in special ways. See Arrays and matrices.\nfactors provide compact ways to handle categorical data. See Ordered and unordered factors.\nlists are a general form of vector in which the various elements need not be of the same type, and are often themselves vectors or lists. Lists provide a convenient way to return the results of a statistical computation. See Lists.\ndata frames are matrix-like structures, in which the columns can be of different types. Think of data frames as ‘data matrices’ with one row per observational unit but with (possibly) both numerical and categorical variables. Many experiments are best described by data frames: the treatments are categorical but the response is numeric. See Data frames.\nfunctions are themselves objects in R which can be stored in the project’s workspace. This provides a simple and convenient way to extend R. See Writing your own functions.\n\n\n\n\n4.3.2 Use R for Formulas\nFor example, say we had a data set of observations of heights and weights, and for some reason we wanted to calculate the BMI for each observation. To get the mean for each observation I could do the following:\n\nlibrary(tidyverse) # load the tidyverse package to use the pipe %>%\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──\n✔ ggplot2 3.3.6     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.1\n✔ readr   2.1.2     ✔ forcats 0.5.2\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nlibrary(datasets) # load the women dataset\n\nwomen %>% # call the data set\n  mutate( # create new variables for the data set I just called\n    bmi = (weight / (height)^2)*703 # new variable BMI using the formula for calculating BMI from weight in pounds and height in inches\n  ) %>%\n  head() # limit my output to the first six observations\n\n  height weight      bmi\n1     58    115 24.03240\n2     59    117 23.62856\n3     60    120 23.43333\n4     61    123 23.23811\n5     62    126 23.04318\n6     63    129 22.84883\n\n\nAnd if I wanted to get the mean or median of my sample’s BMI, then I could do this:\n\nwomen %>% # call the dataset\n  mutate( # create new variables\n    bmi = (weight / (height)^2)*703 # new variable BMI using the formula for calculating BMI from weight in pounds and height in inches\n  ) %>%\n  summarise( # creates a new data frame\n    # It will contain one column for each grouping variable and one column for each of the summary statistics that you have specified\n    bmi_mean = mean(bmi), # new variable\n    bmi_median = median(bmi) # new variable\n  )\n\n  bmi_mean bmi_median\n1 22.72443   22.46272"
+  },
+  {
+    "objectID": "05-import-data.html",
+    "href": "05-import-data.html",
+    "title": "5  Import Data",
+    "section": "",
+    "text": "In this chapter, readers will:\n\nidentify how to import data from csv, xlsx, and sas7bdat files\nidentify how janitor::clean_names() can make messy data, more neat"
+  },
+  {
+    "objectID": "05-import-data.html#section",
+    "href": "05-import-data.html#section",
+    "title": "5  Import Data",
+    "section": "5.2 ",
+    "text": "5.2"
+  },
+  {
+    "objectID": "02-prereq.html#introduction",
+    "href": "02-prereq.html#introduction",
+    "title": "2  Prerequisites",
+    "section": "2.2 Introduction",
+    "text": "2.2 Introduction\nBefore we get started, please make sure that you have met the following required prerequisites."
+  },
+  {
+    "objectID": "03-projects.html#introduction",
+    "href": "03-projects.html#introduction",
+    "title": "3  Project Oriented Workflow",
+    "section": "3.2 Introduction",
+    "text": "3.2 Introduction\nRStudio projects make it easy to organize your data analysis in self-contained projects. Refer to this page, Using RStudio Projects to learn more about RStudio projects. When I initiate a new data analysis project I ground myself within the R for Data Science model:\n\n\n\ndata exploration workflow program\n\n\nTo return to the project and make updates or run reports I open the project in RStudio. This is much easier than fiddling with a working directory."
+  },
+  {
+    "objectID": "04-r-basics.html#introduction",
+    "href": "04-r-basics.html#introduction",
+    "title": "4  R",
+    "section": "4.2 Introduction",
+    "text": "4.2 Introduction\nIn this section, we will review R. R is a powerful data science statistical programming language. The R user manual is a useful reference."
+  },
+  {
+    "objectID": "05-import-data.html#introduction",
+    "href": "05-import-data.html#introduction",
+    "title": "5  Import Data",
+    "section": "5.2 Introduction",
+    "text": "5.2 Introduction\nCommon file types to import may be one of:\n\ncsv: comma separated value, a text file\nxlsx: a Microsoft Excel workbook or worksheet\nsas7bdat: SAS files"
+  },
+  {
+    "objectID": "05-import-data.html#csv",
+    "href": "05-import-data.html#csv",
+    "title": "5  Import Data",
+    "section": "5.3 CSV",
+    "text": "5.3 CSV\nThe readr package, loaded automatically with library(tidyverse), is the package used to read and import csv files. Once loaded, the command to import a csv file is read_csv(\"name-of-csv-file.csv\"). If we were interested in United States COVID-19 Community Levels by County, and we had downloaded data in a csv file, we could import it by:\n\nlibrary(tidyverse) # load readr package from within tidyverse\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──\n✔ ggplot2 3.3.6      ✔ purrr   0.3.4 \n✔ tibble  3.1.7      ✔ dplyr   1.0.10\n✔ tidyr   1.2.0      ✔ stringr 1.4.1 \n✔ readr   2.1.2      ✔ forcats 0.5.2 \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nlibrary(janitor) # load janitor package\n\n\nAttaching package: 'janitor'\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\nmy_csv_data <- read_csv( # assign the csv file to a new object\n  file = \"data-raw/us-covid-19-community-level-by-county.csv\" # this is the file to read\n) %>%\n  clean_names() # clean up the variable names\n\nRows: 1000 Columns: 12\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (5): county, county_fips, state, health_service_area, covid_19_communit...\ndbl  (6): county_population, health_service_area_number, health_service_area...\ndttm (1): date_updated\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nglimpse(my_csv_data) # get a glimpse of the data \n\nRows: 1,000\nColumns: 12\n$ county                             <chr> \"Wilcox County\", \"Caldwell County\",…\n$ county_fips                        <chr> \"13315\", \"29025\", \"27111\", \"40021\",…\n$ state                              <chr> \"Georgia\", \"Missouri\", \"Minnesota\",…\n$ county_population                  <dbl> 8635, 9020, 58746, 48657, 19169, 39…\n$ health_service_area_number         <dbl> 197, 548, 582, 445, 316, 904, 435, …\n$ health_service_area                <chr> \"Sumter, GA - Crisp, GA\", \"Jackson …\n$ health_service_area_population     <dbl> 86868, 1310630, 64718, 239733, 1626…\n$ covid_inpatient_bed_utilization    <dbl> 0.2, 3.2, 6.3, 3.0, 5.8, 3.6, 1.1, …\n$ covid_hospital_admissions_per_100k <dbl> 2.3, 10.8, 12.4, 1.7, 18.4, 8.4, 8.…\n$ covid_cases_per_100k               <dbl> 11.58, 277.16, 156.61, 2.06, 459.07…\n$ covid_19_community_level           <chr> \"Low\", \"High\", \"Medium\", \"Low\", \"Hi…\n$ date_updated                       <dttm> 2022-05-19 07:00:00, 2022-06-23 07…"
+  },
+  {
+    "objectID": "05-import-data.html#excel",
+    "href": "05-import-data.html#excel",
+    "title": "5  Import Data",
+    "section": "5.4 Excel",
+    "text": "5.4 Excel\nThe readxl package, loaded with library(readxl), is the package used to read and import xls and xlsx files. Once loaded, the command to import an Excel worksheet is read_excel(\"name-of-excel-file.xlsx\"). For example:\n\nlibrary(tidyverse) # load tidyverse package\nlibrary(readxl) # load readxl package\nlibrary(janitor) # load janitor package\n\nmy_excel_data <- read_excel( # assign the excel file to a new object\n  \"data-raw/us-covid-19-community-level-by-county.xlsx\" # name of excel file\n) %>%\n  clean_names() # clean up the variable names\n\nglimpse(my_excel_data) # get a glimpse of the data\n\nRows: 1,000\nColumns: 12\n$ county                             <chr> \"Wibaux County\", \"Blue Earth County…\n$ county_fips                        <chr> \"30109\", \"27013\", \"48109\", \"37005\",…\n$ state                              <chr> \"Montana\", \"Minnesota\", \"Texas\", \"N…\n$ county_population                  <chr> \"969\", \"67653\", \"2171\", \"11137\", \"5…\n$ health_service_area_number         <chr> \"767\", \"573\", \"415\", \"73\", \"152\", \"…\n$ health_service_area                <chr> \"Richland, MT - Dawson, MT\", \"Blue …\n$ health_service_area_population     <chr> \"22049\", \"131436\", \"846464\", \"62825…\n$ covid_inpatient_bed_utilization    <chr> \"1.8\", \"2.8\", \"2.2\", \"3.5\", \"1.5\", …\n$ covid_hospital_admissions_per_100k <chr> \"9.1\", \"10.7\", \"5.6\", \"12.7\", \"0.5\"…\n$ covid_cases_per_100k               <chr> \"0\", \"181.81\", \"46.06\", \"26.94\", \"1…\n$ covid_19_community_level           <chr> \"Low\", \"Medium\", \"Low\", \"Medium\", \"…\n$ date_updated                       <dttm> 2022-06-23 07:00:00, 2022-06-09 07…"
+  },
+  {
+    "objectID": "05-import-data.html#sas",
+    "href": "05-import-data.html#sas",
+    "title": "5  Import Data",
+    "section": "5.5 SAS",
+    "text": "5.5 SAS\nThe haven package, loaded with library(haven), is the package used to read and import SAS files. Once loaded, the command to import a SAS data set is read_sas(\"name-of-sas-file.sas7bdat\"). For example:\n\nlibrary(tidyverse) # load tidyverse package\nlibrary(haven) # load haven package\nlibrary(janitor) # load janitor package\n\nmy_sas_data <- read_sas( # assign the sas file to a new object\n  \"data-raw/us-covid-19-community-level-by-county.sas7bdat\" # name of sas file\n) %>%\n  clean_names() # clean up the variable names\n\nglimpse(my_sas_data)\n\nRows: 1,000\nColumns: 12\n$ county                          <chr> \"McCulloch County\", \"McIntosh County\",…\n$ county_fips                     <chr> \"48307\", \"40091\", \"54003\", \"29143\", \"0…\n$ state                           <chr> \"Texas\", \"Oklahoma\", \"West Virginia\", …\n$ county_population               <chr> \"7984\", \"19596\", \"119171\", \"17076\", \"1…\n$ health_service_area_number      <chr> \"426\", \"445\", \"25\", \"563\", \"407\", \"904…\n$ health_service_area             <chr> \"Tom Green (San Angelo), TX - Runnels,…\n$ health_service_area_population  <chr> \"162408\", \"239733\", \"433166\", \"310071\"…\n$ covid_inpatient_bed_utilization <chr> \"1.1\", \"2.9\", \"2.2\", \"0.5\", \"1\", \"3.9\"…\n$ covid_hospital_adm_per_100k     <chr> \"12.9\", \"5.8\", \"3.5\", \"1.6\", \"5.1\", \"8…\n$ covid_cases_per_100k            <chr> \"137.78\", \"56.13\", \"23.5\", \"11.71\", \"2…\n$ covid_19_community_level        <chr> \"Medium\", \"Low\", \"Low\", \"Low\", \"Low\", …\n$ date_updated                    <dttm> 2022-06-23, 2022-06-23, 2022-04-14, 2…"
+  },
+  {
+    "objectID": "05-import-data.html#about-the-data",
+    "href": "05-import-data.html#about-the-data",
+    "title": "5  Import Data",
+    "section": "5.6 About the Data",
+    "text": "5.6 About the Data\nI used the following code to download the data:\nlibrary(tidyverse)\nlibrary(RSocrata)\nlibrary(janitor)\n\ncovid19 <- read.socrata(url = \"https://data.cdc.gov/resource/3nnm-4jni.json\") %>%\n  as_tibble() %>%\n  clean_names()\nAnd I saved a sample of the data to each of the three file types we discussed earlier in this section."
+  },
+  {
+    "objectID": "06-tidy-data.html",
+    "href": "06-tidy-data.html",
+    "title": "6  Tidy Data",
+    "section": "",
+    "text": "In this chapter, readers will:\n\nidentify what makes data “tidy”\nidentify how to make messy data tidy"
+  },
+  {
+    "objectID": "06-tidy-data.html#introduction",
+    "href": "06-tidy-data.html#introduction",
+    "title": "6  Tidy Data",
+    "section": "6.2 Introduction",
+    "text": "6.2 Introduction\nAfter importing my data, but before any meaningful data analysis, I make sure my data is “tidy”. Tidy data follows three rules as suggested by Hadley Wickham and Garrett Grolemund:\n\nEach variable must have its own column.\nEach observation must have its own row.\nEach value must have its own cell.\n\n\n\n\nrules of tidy data\n\n\n\nlibrary(tidyverse) # load readr package from within tidyverse\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──\n✔ ggplot2 3.3.6     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.1\n✔ readr   2.1.2     ✔ forcats 0.5.2\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nlibrary(tidycensus) # load the tidycensus package\nlibrary(janitor) # load janitor package\n\n\nAttaching package: 'janitor'\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\npoverty_wide <- get_acs(\n  geography = \"tract\",\n  variables = c(\n    \"population\" = \"S1701_C01_001\",\n    \"poverty\" = \"S1701_C03_002\",\n    \"median_income\" = \"S1901_C01_012\",\n    \"median_rent\" = \"DP04_0134\",\n    \"median_age\" = \"B01002_001\",\n    \"bachelor_degree_percent\" = \"DP02_0065P\",\n    \"broadband_percent\" = \"DP02_0153P\",\n    \"hispanic_percent\" = \"DP05_0071P\",\n    \"sex_percent\" = \"S0101_C06_008\",\n    \"womens_earnings_percent\" = \"S2411_C04_001\",\n    \"gini_index\" = \"B19083_001\",\n    \"white_not_hispanic\" = \"B01001H_001\"\n    ),\n  year = 2019,\n  geometry = FALSE,\n  survey = \"acs5\",\n  state = \"AZ\",\n  cache_table = TRUE,\n  output = \"wide\"\n) %>%\n  clean_names()\n\nGetting data from the 2015-2019 5-year ACS\nFetching data by table type (\"B/C\", \"S\", \"DP\") and combining the result.\n\nglimpse(poverty_wide)\n\nRows: 1,526\nColumns: 26\n$ geoid                     <chr> \"04001942600\", \"04001942700\", \"04001944000\",…\n$ name                      <chr> \"Census Tract 9426, Apache County, Arizona\",…\n$ median_age_e              <dbl> 32.8, 33.6, 33.9, 27.9, 27.9, 27.9, 34.2, 30…\n$ median_age_m              <dbl> 4.5, 2.5, 3.5, 1.7, 5.9, 4.0, 2.2, 2.1, 1.9,…\n$ gini_index_e              <dbl> 0.5612, 0.4984, 0.5446, 0.5359, 0.4998, 0.52…\n$ gini_index_m              <dbl> 0.0521, 0.0208, 0.0378, 0.0263, 0.0444, 0.05…\n$ white_not_hispanic_e      <dbl> 0, 35, 140, 154, 188, 17, 72, 81, 48, 113, 7…\n$ white_not_hispanic_m      <dbl> 12, 25, 61, 53, 74, 20, 30, 80, 29, 62, 46, …\n$ population_e              <dbl> 1742, 5345, 6543, 5639, 4400, 4009, 6005, 39…\n$ population_m              <dbl> 206, 365, 570, 461, 449, 664, 378, 342, 272,…\n$ poverty_e                 <dbl> 45.4, 44.7, 57.5, 61.7, 62.2, 60.6, 53.6, 45…\n$ poverty_m                 <dbl> 13.4, 7.0, 9.6, 6.6, 12.7, 14.6, 8.1, 8.2, 7…\n$ median_income_e           <dbl> 19250, 26646, 33472, 24696, 26840, 24173, 20…\n$ median_income_m           <dbl> 3355, 2332, 8117, 3776, 5187, 4876, 1680, 43…\n$ sex_percent_e             <dbl> 4.6, 6.8, 6.7, 3.9, 2.7, 6.0, 6.0, 3.9, 7.0,…\n$ sex_percent_m             <dbl> 2.5, 1.8, 1.8, 1.2, 1.9, 3.0, 2.0, 1.4, 1.8,…\n$ womens_earnings_percent_e <dbl> 137.3, 87.1, 114.1, 97.8, 88.8, 84.9, 94.7, …\n$ womens_earnings_percent_m <dbl> 56.8, 10.8, 41.4, 14.2, 69.8, 48.6, 12.0, 18…\n$ median_rent_e             <dbl> NA, 579, 549, 339, 473, 537, 414, 426, 482, …\n$ median_rent_m             <dbl> NA, 104, 65, 42, 39, 142, 20, 41, 49, 62, 12…\n$ bachelor_degree_percent_e <dbl> 2.1, 4.6, 6.2, 6.2, 6.4, 6.8, 4.5, 6.7, 5.7,…\n$ bachelor_degree_percent_m <dbl> 1.2, 1.0, 2.3, 1.6, 2.8, 3.5, 1.2, 1.4, 1.4,…\n$ broadband_percent_e       <dbl> 12.1, 17.8, 29.9, 26.2, 16.9, 16.0, 10.8, 27…\n$ broadband_percent_m       <dbl> 4.9, 2.7, 4.9, 3.6, 5.4, 6.2, 2.2, 3.9, 3.2,…\n$ hispanic_percent_e        <dbl> 0.0, 0.6, 1.1, 1.6, 0.3, 0.1, 0.7, 0.8, 2.6,…\n$ hispanic_percent_m        <dbl> 2.0, 0.5, 0.9, 0.8, 0.5, 0.3, 0.6, 0.8, 1.2,…\n\npoverty_tidy <- get_acs(\n  geography = \"tract\",\n  variables = c(\n    \"population\" = \"S1701_C01_001\",\n    \"poverty\" = \"S1701_C03_002\",\n    \"median_income\" = \"S1901_C01_012\",\n    \"median_rent\" = \"DP04_0134\",\n    \"median_age\" = \"B01002_001\",\n    \"bachelor_degree_percent\" = \"DP02_0065P\",\n    \"broadband_percent\" = \"DP02_0153P\",\n    \"hispanic_percent\" = \"DP05_0071P\",\n    \"sex_percent\" = \"S0101_C06_008\",\n    \"womens_earnings_percent\" = \"S2411_C04_001\",\n    \"gini_index\" = \"B19083_001\",\n    \"white_not_hispanic\" = \"B01001H_001\"\n    ),\n  year = 2019,\n  geometry = FALSE,\n  survey = \"acs5\",\n  state = \"AZ\",\n  cache_table = TRUE,\n  output = \"tidy\"\n) %>%\n  clean_names()\n\nGetting data from the 2015-2019 5-year ACS\nFetching data by table type (\"B/C\", \"S\", \"DP\") and combining the result.\n\nglimpse(poverty_tidy)\n\nRows: 18,312\nColumns: 5\n$ geoid    <chr> \"04001942600\", \"04001942600\", \"04001942600\", \"04001942600\", \"…\n$ name     <chr> \"Census Tract 9426, Apache County, Arizona\", \"Census Tract 94…\n$ variable <chr> \"white_not_hispanic\", \"median_age\", \"gini_index\", \"sex_percen…\n$ estimate <dbl> 0.0000, 32.8000, 0.5612, 4.6000, 1742.0000, 45.4000, 19250.00…\n$ moe      <dbl> 12.0000, 4.5000, 0.0521, 2.5000, 206.0000, 13.4000, 3355.0000…"
+  }
+]
